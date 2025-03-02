@@ -38,6 +38,18 @@
         const reader=new FileReader
         reader.onload=()=>{
             const lines=reader.result.split("\n")
+            for (let i = 0; i < lines.length; i++) {
+                const li = lines[i];
+                const cols=li.split(",")
+                let tr=document.createElement("tr")
+                for (let j = 0; j < cols.length; j++) {
+                    const co = cols[j];
+                    let td=document.createElement("td")
+                    td.innerHTML=co
+                    tr.appendChild(td)
+                }
+                table.appendChild(tr)
+            }
         }
     </script>
 </body>
