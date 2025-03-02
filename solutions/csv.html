@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>csv查看器</title>
+    <style>
+        .controls{
+            width: 100%;
+            background-color: black;
+            color: white;
+        }
+        .controls button{
+            width: 100px;
+            height: 20px;
+            text-align: center;
+            border: 1px solid;
+        }
+        table{
+            width: 100%;
+        }
+        td{
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button onclick="selector.click()">打开</button>
+    </div>
+    <table></table>
+    <script>
+        const table=document.querySelector("table")
+        const btns=document.querySelectorAll(".controls button")
+        const selector=document.createElement("input")
+        selector.type="file"
+        selector.onchange=()=>reader.readAsText(selector.files[0])
+        const reader=new FileReader
+        reader.onload=()=>{
+            const lines=reader.result.split("\n")
+        }
+    </script>
+</body>
+</html>
