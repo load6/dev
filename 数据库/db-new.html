@@ -1,0 +1,61 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>index数据库</title>
+<link rel="stylesheet" href="style.css">
+<body>
+    <div class="filename">
+        文件名：<span>未打开文件</span>
+    </div>
+    <div class="titlebar">
+        <button>打开</button>
+        <button>保存</button>
+        <button>另存为</button>
+        <button>上一页</button>
+        <button>新建</button>
+        存储库名：<input>
+        <button>删除存储库</button>
+    </div>
+    <div id="explorer">
+        <div id="path">根目录 > </div>
+        <div class="output"></div>
+    </div>
+    <div id="preview">
+        <div class="title">
+            <span class="t">编辑区</span>
+            <span class="fulsc">全屏编辑</span>
+            <div class="close">×</div>
+        </div>
+        数据名：<input id="dname">
+        <button>删除数据</button>
+        <button>更换导入文件</button>
+        <div class="view"></div>
+    </div>
+    <div id="bgdrag">拖入以打开文件(只能打开一个)</div>
+    <div class="comprom">
+        <input placeholder="输入在线文件链接(不能有防盗链机制，允许输入base64编码)">
+        <button>使用本地文件</button>
+    </div>
+    <input type="checkbox" style="display: none;" id="uns">
+    <div id="shadow"></div>
+    <div id="create">
+        <div class="title">新建</div>
+        <div class="clo">×</div>
+        新建的类型: 
+        <select>
+            <option value="dir">存储库</option>
+            <option value="text">文本数据</option>
+            <option value="media">音视频数据</option>
+            <option value="image">图像数据</option>
+            <option value="storage">文件存储</option>
+        </select><br>
+        输入名称(按Enter确定创建):<input><br>
+        也可以选择一个文件直接导入(先选择选择好类型再选文件，选好文件后自动导入):<br>
+        <input type="file" multiple><br>
+        注意:可以导入多个文件，但不能导入文件夹
+        <input type="hidden">
+    </div>
+    <script src="scripts/explorer.js"></script>
+    <script src="scripts/filesys.js"></script>
+    <script src="scripts/create.js"></script>
+    <script src="scripts/mdset.js"></script>
+</body>
