@@ -1,0 +1,16 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>md阅读器</title>
+<script src="./marked.min.js"></script>
+<!--https://demo.likeyunba.com/md-marked/marked.min.js -->
+<body>
+    <input type="file">
+    <div id="output"></div>
+    <script>
+        const input=document.querySelector('input')
+        const output=document.getElementById('output')
+        const reader=new FileReader
+        reader.onload=()=>output.innerHTML= marked.parse(reader.result)
+        input.onchange=()=>reader.readAsText(input.files[0])
+    </script>
+</body>
